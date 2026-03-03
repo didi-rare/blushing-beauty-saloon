@@ -302,6 +302,21 @@
     transform: translateY(-3px);
 }
 
+.footer-map {
+    margin-top: var(--spacing-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    line-height: 0;
+}
+
+.footer-map iframe {
+    filter: grayscale(30%) contrast(1.1);
+    transition: filter var(--transition-normal);
+}
+
+.footer-map iframe:hover {
+    filter: grayscale(0%) contrast(1);
+}
+
 .footer-bottom {
     text-align: center;
     padding: var(--spacing-lg);
