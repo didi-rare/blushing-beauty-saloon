@@ -1,0 +1,45 @@
+/* src/styles/variables.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Great+Vibes&display=swap');
+
+:root {
+    /* Brand Colors from provided Logo/Pricing */
+    --color-primary: #FF1493;
+    /* Hot Pink */
+    --color-secondary: #4A004A;
+    /* Deep Plum */
+    --color-accent: #FFB6C1;
+    /* Light Pink for soft backgrounds */
+
+    /* Neutrals */
+    --color-white: #FFFFFF;
+    --color-off-white: #FAF6F8;
+    --color-black: #1A1A1A;
+    --color-text-dark: #333333;
+    --color-text-light: #666666;
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-cursive: 'Great Vibes', cursive;
+    /* Used for subtle elegant touches */
+    --font-body: 'Inter', sans-serif;
+
+    /* Layout & Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+    --container-max-width: 1200px;
+
+    /* Shadows & Radius for Glassmorphism/Cards */
+    --shadow-sm: 0 2px 8px rgba(74, 0, 74, 0.05);
+    --shadow-md: 0 4px 16px rgba(74, 0, 74, 0.08);
+    --shadow-hover: 0 12px 24px rgba(255, 20, 147, 0.15);
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease-in-out;
+    --transition-normal: 0.3s ease-in-out;
+}

@@ -1,0 +1,33 @@
+:root {
+  --color-hot-pink: #FF1493;
+  --color-deep-plum: #4A004A;
+  --color-white: #FFFFFF;
+  --color-black: #1A1A1A;
+  --color-light-gray: #F5F5F5;
+  
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-deep-plum);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

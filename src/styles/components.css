@@ -1,0 +1,166 @@
+/* src/styles/components.css */
+
+/* --- Header --- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: var(--spacing-sm) 0;
+    margin-bottom: var(--spacing-lg);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-family: var(--font-cursive);
+    line-height: 1;
+}
+
+.logo-blushing {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-left: -10px;
+}
+
+.logo-beauty {
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-family: var(--font-heading);
+}
+
+.desktop-nav ul {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.desktop-nav a {
+    font-weight: 500;
+    color: var(--color-text-dark);
+}
+
+.desktop-nav a:hover {
+    color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+
+    .desktop-nav,
+    .header-cta {
+        display: none;
+        /* Quick mobile hiding for now */
+    }
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--color-secondary);
+    color: var(--color-off-white);
+    padding: var(--spacing-xl) 0 0 0;
+    margin-top: var(--spacing-xl);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.logo-text-light {
+    color: var(--color-white);
+    font-family: var(--font-cursive);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer h4 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.25rem;
+}
+
+.footer p {
+    color: var(--color-off-white);
+    opacity: 0.9;
+}
+
+.footer-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: var(--spacing-md);
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+/* --- Service Card --- */
+.service-card {
+    overflow: hidden;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.service-card-header {
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+.bg-hair {
+    background-color: var(--color-secondary);
+}
+
+.bg-nails {
+    background-color: var(--color-primary);
+}
+
+.service-card-header h3 {
+    color: var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.service-card-body {
+    padding: var(--spacing-lg);
+}
+
+.price-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.125rem;
+}
+
+.price-name {
+    font-weight: 500;
+    color: var(--color-secondary);
+}
+
+.price-dots {
+    flex-grow: 1;
+    border-bottom: 2px dotted rgba(74, 0, 74, 0.2);
+    margin: 0 var(--spacing-sm);
+    position: relative;
+    top: -4px;
+}
+
+.price-amount {
+    font-weight: 700;
+    color: var(--color-text-dark);
+}
