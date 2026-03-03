@@ -1,45 +1,58 @@
 /* src/styles/variables.css */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
 
 :root {
-    /* Brand Colors from provided Logo/Pricing */
+    /* Brand Colors */
     --color-primary: #FF1493;
-    /* Hot Pink */
+    --color-primary-light: #FF69B4;
+    --color-primary-dark: #C2185B;
     --color-secondary: #4A004A;
-    /* Deep Plum */
+    --color-secondary-light: #6B2D6B;
     --color-accent: #FFB6C1;
-    /* Light Pink for soft backgrounds */
+    --color-accent-warm: #F8E8EE;
+    --color-gold: #D4A574;
 
     /* Neutrals */
     --color-white: #FFFFFF;
-    --color-off-white: #FAF6F8;
+    --color-off-white: #FBF7F9;
+    --color-cream: #FAF0F3;
     --color-black: #1A1A1A;
-    --color-text-dark: #333333;
-    --color-text-light: #666666;
+    --color-text-dark: #2D2D2D;
+    --color-text-medium: #555555;
+    --color-text-light: #777777;
 
     /* Typography */
     --font-heading: 'Playfair Display', serif;
     --font-cursive: 'Great Vibes', cursive;
-    /* Used for subtle elegant touches */
     --font-body: 'Inter', sans-serif;
 
-    /* Layout & Spacing */
+    /* Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 2rem;
     --spacing-xl: 4rem;
+    --spacing-2xl: 6rem;
+    --spacing-3xl: 8rem;
     --container-max-width: 1200px;
 
-    /* Shadows & Radius for Glassmorphism/Cards */
-    --shadow-sm: 0 2px 8px rgba(74, 0, 74, 0.05);
-    --shadow-md: 0 4px 16px rgba(74, 0, 74, 0.08);
-    --shadow-hover: 0 12px 24px rgba(255, 20, 147, 0.15);
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(74, 0, 74, 0.06);
+    --shadow-md: 0 8px 24px rgba(74, 0, 74, 0.08);
+    --shadow-lg: 0 16px 48px rgba(74, 0, 74, 0.12);
+    --shadow-hover: 0 20px 40px rgba(255, 20, 147, 0.18);
+    --shadow-glow: 0 0 30px rgba(255, 20, 147, 0.25);
+
+    /* Radius */
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-full: 9999px;
 
     /* Transitions */
-    --transition-fast: 0.2s ease-in-out;
-    --transition-normal: 0.3s ease-in-out;
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
