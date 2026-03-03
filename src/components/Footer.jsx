@@ -53,10 +53,10 @@ const Footer = () => {
                     <p><strong>WhatsApp:</strong> <a href="https://wa.me/2348057451244" target="_blank" rel="noreferrer">+234 805 745 1244</a></p>
                     <p><strong>Instagram:</strong> <a href="https://instagram.com/blushingbeautyhub" target="_blank" rel="noreferrer">@blushingbeautyhub</a></p>
                     <p><strong>TikTok:</strong> <a href="https://tiktok.com/@blushlingbeautyhub" target="_blank" rel="noreferrer">@blushlingbeautyhub</a></p>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
                         <LocationIcon />
-                        <a href="https://maps.google.com/?q=48+Agboyi+Road,+Ogudu,+Lagos" target="_blank" rel="noreferrer">
-                            48 Agboyi Road, Ogudu, Lagos
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=48+Agboyi+Rd,+Orioke,+Lagos+100242,+Lagos" target="_blank" rel="noreferrer">
+                            48 Agboyi Rd, Orioke, Lagos 100242
                         </a>
                     </p>
 
@@ -71,7 +71,7 @@ const Footer = () => {
             <div className="footer-map">
                 <iframe
                     title="Blushing Beauty Studio Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.5!2d3.3890!3d6.5720!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s48+Agboyi+Road%2C+Ogudu%2C+Lagos!5e0!3m2!1sen!2sng!4v1"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=48+Agboyi+Rd,+Orioke,+Lagos+100242,+Lagos&zoom=16"
                     width="100%"
                     height="250"
                     style={{ border: 0 }}
