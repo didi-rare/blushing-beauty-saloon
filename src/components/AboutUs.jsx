@@ -8,7 +8,7 @@ const AboutUs = () => {
                 <div className="about-visual reveal-left">
                     <div className="about-visual-card">
                         <img
-                            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            src="/portfolio/hair/images/WhatsApp Image 2026-03-03 at 17.23.19.jpeg"
                             alt="Inside Blushing Beauty Studio"
                         />
                     </div>
