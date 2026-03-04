@@ -71,7 +71,7 @@ const Footer = () => {
             <div className="footer-map">
                 <iframe
                     title="Blushing Beauty Studio Location"
-                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=48+Agboyi+Rd,+Orioke,+Lagos+100242,+Lagos&zoom=16"
+                    src="https://maps.google.com/maps?q=48+Agboyi+Rd,+Orioke,+Lagos+100242,+Lagos&t=&z=16&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="250"
                     style={{ border: 0 }}
