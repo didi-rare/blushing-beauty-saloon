@@ -1,0 +1,7 @@
+# Blushing Beauty Studio
+# https://www.blushingbeauty.studio
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.blushingbeauty.studio/sitemap.xml

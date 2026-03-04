@@ -70,20 +70,6 @@ The site is deployed on **Vercel** with a custom domain.
 vercel --prod
 ```
 
-## Contact & Socials
-
-- 📱 **WhatsApp**: [+234 805 745 1244](https://wa.me/2348057451244)
-- 📸 **Instagram**: [@blushingbeautyhub](https://instagram.com/blushingbeautyhub)
-- 🎵 **TikTok**: [@blushlingbeautyhub](https://tiktok.com/@blushlingbeautyhub)
-- 📍 **Location**: [48 Agboyi Rd, Orioke, Lagos 100242](https://www.google.com/maps/dir/?api=1&destination=48+Agboyi+Rd,+Orioke,+Lagos+100242,+Lagos)
-
-## Hours
-
-| Day | Hours |
-|---|---|
-| Monday – Saturday | 8:00 AM – 7:30 PM |
-| Sunday | 1:00 PM – 7:00 PM |
-
 ---
 
 © 2026 Blushing Beauty Studio. All rights reserved.
