@@ -51,4 +51,10 @@ describe('Header Component', () => {
         expect(mobileBookLinks.length).toBeGreaterThanOrEqual(1);
         expect(mobileBookLinks[0].closest('a')).toHaveAttribute('href', 'https://wa.me/2348057451244');
     });
+
+    it('marks the mobile drawer as inert when closed (removes from tab order)', () => {
+        render(<Header />);
+        const drawer = screen.getByLabelText('Mobile');
+        expect(drawer).toHaveAttribute('inert');
+    });
 });

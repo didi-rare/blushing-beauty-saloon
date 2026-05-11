@@ -66,7 +66,7 @@ const PortfolioGallery = () => {
                 </div>
 
                 <div className="gallery-grid">
-                    {items.map((item, index) => (
+                    {items.map((item) => (
                         <ExternalLink
                             key={item.src}
                             href={WHATSAPP_URL}
@@ -78,7 +78,6 @@ const PortfolioGallery = () => {
                                 alt={item.alt}
                                 loading="lazy"
                                 decoding="async"
-                                style={{ animationDelay: `${index * 0.1}s` }}
                                 onError={() => handleImageError(item.src)}
                             />
                             <div className="gallery-item-overlay" aria-hidden="true">

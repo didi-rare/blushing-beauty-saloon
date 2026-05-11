@@ -95,7 +95,7 @@ const Header = () => {
                 id="mobile-nav"
                 className={`mobile-nav ${menuOpen ? 'open' : ''}`}
                 aria-label="Mobile"
-                {...(!menuOpen && { inert: '' })}
+                inert={menuOpen ? undefined : ''}
             >
                 <ul>
                     <li><a href="#home" onClick={closeMenu}>Home</a></li>
