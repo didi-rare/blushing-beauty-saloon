@@ -1,18 +1,18 @@
-import React from 'react';
+import { WHATSAPP_URL } from '../config/contact';
+import ExternalLink from './ExternalLink';
 
 const Hero = () => {
     return (
         <section id="home" className="hero-section">
-            {/* Floating background orbs */}
-            <div className="hero-bg-overlay"></div>
-            <div className="hero-orb hero-orb-1"></div>
-            <div className="hero-orb hero-orb-2"></div>
-            <div className="hero-orb hero-orb-3"></div>
+            <div className="hero-bg-overlay" aria-hidden="true"></div>
+            <div className="hero-orb hero-orb-1" aria-hidden="true"></div>
+            <div className="hero-orb hero-orb-2" aria-hidden="true"></div>
+            <div className="hero-orb hero-orb-3" aria-hidden="true"></div>
 
             <div className="hero-container">
                 <span className="hero-label">Welcome to</span>
                 <h1>Blushing Beauty Studio</h1>
-                <div className="hero-divider"></div>
+                <div className="hero-divider" aria-hidden="true"></div>
                 <p className="hero-tagline">
                     Where Professionalism Meets Perfection. Since 2022, we have been delivering premium beauty
                     experiences tailored to your lifestyle. Specializing in expert hair &amp; wigs, stunning makeup
@@ -20,9 +20,13 @@ const Hero = () => {
                     make you shine. Experience unmatched client care.
                 </p>
                 <div className="hero-buttons">
-                    <a href="https://wa.me/2348057451244" target="_blank" rel="noreferrer" className="btn btn-primary">
+                    <ExternalLink
+                        href={WHATSAPP_URL}
+                        className="btn btn-primary"
+                        ariaLabel="Book via WhatsApp (opens in a new tab)"
+                    >
                         Book via WhatsApp
-                    </a>
+                    </ExternalLink>
                     <a href="#portfolio" className="btn btn-outline">
                         View Our Work
                     </a>

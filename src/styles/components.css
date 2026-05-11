@@ -264,6 +264,13 @@
     margin-bottom: var(--spacing-sm);
 }
 
+.footer-address {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
 .footer-hours {
     margin-top: var(--spacing-md);
     padding: var(--spacing-md);

@@ -23,25 +23,27 @@ describe('Footer Component', () => {
     // --- Instagram ---
     it('displays the correct Instagram handle', () => {
         render(<Footer />);
-        expect(screen.getByText('@blushingbeautyhub')).toBeInTheDocument();
+        const handles = screen.getAllByText('@blushingbeautyhub');
+        expect(handles.length).toBeGreaterThanOrEqual(1);
     });
 
     it('Instagram link has correct href', () => {
         render(<Footer />);
-        const igLink = screen.getByText('@blushingbeautyhub').closest('a');
+        const igLink = screen.getByRole('link', { name: /Instagram/i });
         expect(igLink).toHaveAttribute('href', 'https://instagram.com/blushingbeautyhub');
     });
 
     // --- TikTok ---
     it('displays the correct TikTok handle', () => {
         render(<Footer />);
-        expect(screen.getByText('@blushlingbeautyhub')).toBeInTheDocument();
+        const handles = screen.getAllByText('@blushingbeautyhub');
+        expect(handles.length).toBeGreaterThanOrEqual(2); // Instagram + TikTok use the same handle
     });
 
     it('TikTok link has correct href', () => {
         render(<Footer />);
-        const ttLink = screen.getByText('@blushlingbeautyhub').closest('a');
-        expect(ttLink).toHaveAttribute('href', 'https://tiktok.com/@blushlingbeautyhub');
+        const tiktokLink = screen.getByRole('link', { name: /TikTok/i });
+        expect(tiktokLink).toHaveAttribute('href', 'https://tiktok.com/@blushingbeautyhub');
     });
 
     // --- Address ---
@@ -77,11 +79,11 @@ describe('Footer Component', () => {
     });
 
     // --- Social Icons (SVGs) ---
-    it('has social icon links in the footer', () => {
+    it('has accessible social icon links in the footer', () => {
         render(<Footer />);
-        const whatsappIcon = screen.getByTitle('WhatsApp');
-        const igIcon = screen.getByTitle('Instagram');
-        const ttIcon = screen.getByTitle('TikTok');
+        const whatsappIcon = screen.getByRole('link', { name: /WhatsApp/i });
+        const igIcon = screen.getByRole('link', { name: /Instagram/i });
+        const ttIcon = screen.getByRole('link', { name: /TikTok/i });
         expect(whatsappIcon).toBeInTheDocument();
         expect(igIcon).toBeInTheDocument();
         expect(ttIcon).toBeInTheDocument();

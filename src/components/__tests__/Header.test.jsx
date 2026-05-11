@@ -39,8 +39,10 @@ describe('Header Component', () => {
 
     it('renders the hamburger menu button', () => {
         render(<Header />);
-        const hamburger = screen.getByLabelText('Toggle menu');
+        const hamburger = screen.getByLabelText(/menu/i);
         expect(hamburger).toBeInTheDocument();
+        expect(hamburger).toHaveAttribute('aria-expanded', 'false');
+        expect(hamburger).toHaveAttribute('aria-controls', 'mobile-nav');
     });
 
     it('has mobile nav WhatsApp CTA', () => {
@@ -48,5 +50,11 @@ describe('Header Component', () => {
         const mobileBookLinks = screen.getAllByText('Book via WhatsApp');
         expect(mobileBookLinks.length).toBeGreaterThanOrEqual(1);
         expect(mobileBookLinks[0].closest('a')).toHaveAttribute('href', 'https://wa.me/2348057451244');
+    });
+
+    it('marks the mobile drawer as inert when closed (removes from tab order)', () => {
+        render(<Header />);
+        const drawer = screen.getByLabelText('Mobile');
+        expect(drawer).toHaveAttribute('inert');
     });
 });
