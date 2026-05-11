@@ -80,7 +80,7 @@
 }
 
 .hero-tagline {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.96);
     font-size: clamp(1rem, 2vw, 1.2rem);
     max-width: 650px;
     margin: 0 auto var(--spacing-xl);
@@ -367,39 +367,12 @@
     font-size: 1.1rem;
 }
 
-/* ===================== WORKING HOURS ===================== */
-.hours-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
-}
-
-.hours-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-md) var(--spacing-lg);
-    background: var(--color-accent-warm);
-    border-radius: var(--radius-sm);
-    border-left: 3px solid var(--color-primary);
-}
-
-.hours-item .day {
-    font-weight: 600;
-    color: var(--color-secondary);
-}
-
-.hours-item .time {
-    color: var(--color-text-medium);
-    font-weight: 500;
+.portfolio-cta {
+    text-align: center;
+    margin-top: 3rem;
 }
 
 @media (max-width: 768px) {
-    .hours-grid {
-        grid-template-columns: 1fr;
-    }
-
     .gallery-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }

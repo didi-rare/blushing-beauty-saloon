@@ -39,7 +39,7 @@ describe('AboutUs Component', () => {
 
     it('uses a local portfolio image, not an external URL', () => {
         render(<AboutUs />);
-        const img = screen.getByAltText('Inside Blushing Beauty Studio');
+        const img = screen.getByAltText(/Inside Blushing Beauty Studio/i);
         expect(img).toBeInTheDocument();
         expect(img.getAttribute('src')).toMatch(/^\/portfolio\//);
         expect(img.getAttribute('src')).not.toMatch(/unsplash/);

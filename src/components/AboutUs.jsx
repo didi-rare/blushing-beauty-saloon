@@ -1,5 +1,3 @@
-import React from 'react';
-
 const AboutUs = () => {
     return (
         <section id="about" className="about-section">
@@ -9,13 +7,18 @@ const AboutUs = () => {
                     <div className="about-visual-card">
                         <img
                             src="/portfolio/hair/images/WhatsApp Image 2026-03-03 at 17.23.19.jpeg"
-                            alt="Inside Blushing Beauty Studio"
+                            alt="Inside Blushing Beauty Studio — a stylist creating a layered braid for a seated client"
+                            width="800"
+                            height="1000"
+                            loading="eager"
+                            fetchPriority="high"
+                            decoding="async"
                         />
                     </div>
-                    <div className="about-visual-accent"></div>
-                    <div className="about-visual-badge">
-                        <span className="badge-number">3+</span>
-                        <span className="badge-text">Years of Excellence</span>
+                    <div className="about-visual-accent" aria-hidden="true"></div>
+                    <div className="about-visual-badge" role="img" aria-label="Three plus years of excellence">
+                        <span className="badge-number" aria-hidden="true">3+</span>
+                        <span className="badge-text" aria-hidden="true">Years of Excellence</span>
                     </div>
                 </div>
 
@@ -37,20 +40,20 @@ const AboutUs = () => {
 
                     <div className="about-features">
                         <div className="about-feature">
-                            <span className="feature-icon">✂️</span>
-                            <span>Hair & Wigs</span>
+                            <span className="feature-icon" aria-hidden="true">✂️</span>
+                            <span>Hair &amp; Wigs</span>
                         </div>
                         <div className="about-feature">
-                            <span className="feature-icon">💅</span>
-                            <span>Nails & Pedicure</span>
+                            <span className="feature-icon" aria-hidden="true">💅</span>
+                            <span>Nails &amp; Pedicure</span>
                         </div>
                         <div className="about-feature">
-                            <span className="feature-icon">💄</span>
-                            <span>Makeup & Gele</span>
+                            <span className="feature-icon" aria-hidden="true">💄</span>
+                            <span>Makeup &amp; Gele</span>
                         </div>
                         <div className="about-feature">
-                            <span className="feature-icon">🧖</span>
-                            <span>Facials & Skincare</span>
+                            <span className="feature-icon" aria-hidden="true">🧖</span>
+                            <span>Facials &amp; Skincare</span>
                         </div>
                     </div>
                 </div>

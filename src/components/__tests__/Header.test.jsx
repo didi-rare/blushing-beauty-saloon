@@ -39,8 +39,10 @@ describe('Header Component', () => {
 
     it('renders the hamburger menu button', () => {
         render(<Header />);
-        const hamburger = screen.getByLabelText('Toggle menu');
+        const hamburger = screen.getByLabelText(/menu/i);
         expect(hamburger).toBeInTheDocument();
+        expect(hamburger).toHaveAttribute('aria-expanded', 'false');
+        expect(hamburger).toHaveAttribute('aria-controls', 'mobile-nav');
     });
 
     it('has mobile nav WhatsApp CTA', () => {

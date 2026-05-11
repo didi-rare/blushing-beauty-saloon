@@ -36,6 +36,6 @@ describe('Hero Component', () => {
         render(<Hero />);
         const whatsappLink = screen.getByText('Book via WhatsApp').closest('a');
         expect(whatsappLink).toHaveAttribute('target', '_blank');
-        expect(whatsappLink).toHaveAttribute('rel', 'noreferrer');
+        expect(whatsappLink.getAttribute('rel')).toMatch(/noreferrer/);
     });
 });
