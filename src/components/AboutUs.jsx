@@ -11,8 +11,8 @@ const AboutUs = () => {
                             width="800"
                             height="1000"
                             loading="eager"
-                            fetchPriority="high"
                             decoding="async"
+                            {...{ fetchpriority: 'high' }}
                         />
                     </div>
                     <div className="about-visual-accent" aria-hidden="true"></div>

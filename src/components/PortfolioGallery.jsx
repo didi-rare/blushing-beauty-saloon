@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { WHATSAPP_URL } from '../config/contact';
+import ExternalLink from './ExternalLink';
 
 const hairImages = [
     { src: '/portfolio/hair/images/WhatsApp Image 2026-03-03 at 17.20.18.jpeg', alt: 'Protective braid styling — side profile' },
@@ -20,17 +21,19 @@ const nailImages = [
     { src: '/portfolio/nails/images/WhatsApp Image 2026-03-03 at 17.24.17.jpeg', alt: 'Sculpted gel nail art — detailed' },
 ];
 
+const TABS = [
+    { key: 'all', label: 'All Work', items: [...hairImages, ...nailImages] },
+    { key: 'hair', label: 'Hair & Wigs', items: hairImages },
+    { key: 'nails', label: 'Nails', items: nailImages },
+];
+
 const PortfolioGallery = () => {
     const [activeTab, setActiveTab] = useState('all');
     const [failed, setFailed] = useState(() => new Set());
 
-    const getFilteredItems = () => {
-        const items =
-            activeTab === 'hair' ? hairImages :
-                activeTab === 'nails' ? nailImages :
-                    [...hairImages, ...nailImages];
-        return items.filter((item) => !failed.has(item.src));
-    };
+    const items = (TABS.find((t) => t.key === activeTab)?.items ?? []).filter(
+        (item) => !failed.has(item.src),
+    );
 
     const handleImageError = (src) => {
         setFailed((prev) => {
@@ -39,12 +42,6 @@ const PortfolioGallery = () => {
             return next;
         });
     };
-
-    const tabs = [
-        { key: 'all', label: 'All Work' },
-        { key: 'hair', label: 'Hair & Wigs' },
-        { key: 'nails', label: 'Nails' },
-    ];
 
     return (
         <section id="portfolio" className="portfolio-section">
@@ -56,7 +53,7 @@ const PortfolioGallery = () => {
                 </div>
 
                 <div className="portfolio-tabs reveal" role="group" aria-label="Filter portfolio">
-                    {tabs.map(({ key, label }) => (
+                    {TABS.map(({ key, label }) => (
                         <button
                             key={key}
                             className={`portfolio-tab ${activeTab === key ? 'active' : ''}`}
@@ -69,39 +66,32 @@ const PortfolioGallery = () => {
                 </div>
 
                 <div className="gallery-grid">
-                    {getFilteredItems().map((item, index) => (
-                        <a
+                    {items.map((item, index) => (
+                        <ExternalLink
                             key={item.src}
                             href={WHATSAPP_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
                             className="gallery-item reveal"
-                            style={{ animationDelay: `${index * 0.1}s` }}
-                            aria-label={`Book this look on WhatsApp: ${item.alt}`}
+                            ariaLabel={`Book this look on WhatsApp: ${item.alt}`}
                         >
                             <img
                                 src={item.src}
                                 alt={item.alt}
                                 loading="lazy"
                                 decoding="async"
+                                style={{ animationDelay: `${index * 0.1}s` }}
                                 onError={() => handleImageError(item.src)}
                             />
                             <div className="gallery-item-overlay" aria-hidden="true">
                                 <span>Book This Look →</span>
                             </div>
-                        </a>
+                        </ExternalLink>
                     ))}
                 </div>
 
                 <div className="portfolio-cta">
-                    <a
-                        href={WHATSAPP_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-primary"
-                    >
+                    <ExternalLink href={WHATSAPP_URL} className="btn btn-primary">
                         Book Your Appointment
-                    </a>
+                    </ExternalLink>
                 </div>
             </div>
         </section>

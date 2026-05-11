@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import PortfolioGallery from './components/PortfolioGallery';
 import Footer from './components/Footer';
+import ExternalLink from './components/ExternalLink';
 import { WHATSAPP_URL } from './config/contact';
 import './styles/global.css';
 import './styles/components.css';
@@ -39,19 +40,13 @@ function App() {
                 <AboutUs />
                 <PortfolioGallery />
 
-                {/* CTA Section */}
                 <section className="cta-section" aria-labelledby="cta-heading">
                     <div className="container cta-content">
                         <h2 id="cta-heading">Love What You See?</h2>
                         <p>Contact us directly on WhatsApp to get a personalized quote or book your next look.</p>
-                        <a
-                            href={WHATSAPP_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn btn-primary"
-                        >
+                        <ExternalLink href={WHATSAPP_URL} className="btn btn-primary">
                             Book on WhatsApp
-                        </a>
+                        </ExternalLink>
                     </div>
                 </section>
             </main>

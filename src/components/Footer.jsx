@@ -8,7 +8,9 @@ import {
     ADDRESS_LINE,
     MAPS_DIRECTIONS_URL,
     MAPS_EMBED_URL,
+    HOURS,
 } from '../config/contact';
+import ExternalLink from './ExternalLink';
 
 const WhatsAppIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
@@ -42,9 +44,9 @@ const Footer = () => {
                     <h3 className="logo-text-light">Blushing Beauty</h3>
                     <p>Where professionalism meets perfection. Your premium destination for exquisite beauty services since 2022.</p>
                     <div className="footer-social">
-                        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp (opens in a new tab)"><WhatsAppIcon /></a>
-                        <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)"><InstagramIcon /></a>
-                        <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" aria-label="TikTok (opens in a new tab)"><TikTokIcon /></a>
+                        <ExternalLink href={WHATSAPP_URL} ariaLabel="WhatsApp (opens in a new tab)"><WhatsAppIcon /></ExternalLink>
+                        <ExternalLink href={INSTAGRAM_URL} ariaLabel="Instagram (opens in a new tab)"><InstagramIcon /></ExternalLink>
+                        <ExternalLink href={TIKTOK_URL} ariaLabel="TikTok (opens in a new tab)"><TikTokIcon /></ExternalLink>
                     </div>
                 </div>
 
@@ -60,24 +62,22 @@ const Footer = () => {
 
                 <div className="footer-contact">
                     <h4>Get In Touch</h4>
-                    <p><strong>WhatsApp:</strong> <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{WHATSAPP_DISPLAY}</a></p>
-                    <p><strong>Instagram:</strong> <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">@{INSTAGRAM_HANDLE}</a></p>
-                    <p><strong>TikTok:</strong> <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer">@{TIKTOK_HANDLE}</a></p>
+                    <p><strong>WhatsApp:</strong> <ExternalLink href={WHATSAPP_URL}>{WHATSAPP_DISPLAY}</ExternalLink></p>
+                    <p><strong>Instagram:</strong> <ExternalLink href={INSTAGRAM_URL}>@{INSTAGRAM_HANDLE}</ExternalLink></p>
+                    <p><strong>TikTok:</strong> <ExternalLink href={TIKTOK_URL}>@{TIKTOK_HANDLE}</ExternalLink></p>
                     <p className="footer-address">
                         <LocationIcon />
-                        <a href={MAPS_DIRECTIONS_URL} target="_blank" rel="noopener noreferrer">
-                            {ADDRESS_LINE}
-                        </a>
+                        <ExternalLink href={MAPS_DIRECTIONS_URL}>{ADDRESS_LINE}</ExternalLink>
                     </p>
 
                     <div className="footer-hours">
-                        <p><strong>Mon – Sat:</strong> 8:00 AM – 7:30 PM</p>
-                        <p><strong>Sunday:</strong> 1:00 PM – 7:00 PM</p>
+                        {HOURS.map(({ label, time }) => (
+                            <p key={label}><strong>{label}:</strong> {time}</p>
+                        ))}
                     </div>
                 </div>
             </div>
 
-            {/* Google Maps Embed */}
             <div className="footer-map">
                 <iframe
                     title="Blushing Beauty Studio Location"

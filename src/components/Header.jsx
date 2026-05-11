@@ -1,25 +1,36 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { WHATSAPP_URL } from '../config/contact';
+import ExternalLink from './ExternalLink';
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const hamburgerRef = useRef(null);
     const drawerRef = useRef(null);
+    const scrolledRef = useRef(false);
 
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 50);
+        const handleScroll = () => {
+            const next = window.scrollY > 50;
+            if (next !== scrolledRef.current) {
+                scrolledRef.current = next;
+                setScrolled(next);
+            }
+        };
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Body-scroll lock tied to menu state, with cleanup on unmount
+    const closeMenu = useCallback(() => {
+        setMenuOpen(false);
+        hamburgerRef.current?.focus();
+    }, []);
+
     useEffect(() => {
         document.body.style.overflow = menuOpen ? 'hidden' : '';
         return () => { document.body.style.overflow = ''; };
     }, [menuOpen]);
 
-    // Close on Escape, close & restore desktop layout on viewport resize
     useEffect(() => {
         if (!menuOpen) return;
         const handleKey = (e) => { if (e.key === 'Escape') closeMenu(); };
@@ -30,23 +41,13 @@ const Header = () => {
             window.removeEventListener('keydown', handleKey);
             window.removeEventListener('resize', handleResize);
         };
-    }, [menuOpen]);
+    }, [menuOpen, closeMenu]);
 
-    // Move focus into the drawer when it opens, return to hamburger on close
     useEffect(() => {
-        if (menuOpen && drawerRef.current) {
-            const firstLink = drawerRef.current.querySelector('a');
-            firstLink?.focus();
-        } else if (!menuOpen && hamburgerRef.current && document.activeElement === document.body) {
-            // intentionally no-op when focus is already elsewhere
-        }
+        if (menuOpen) drawerRef.current?.querySelector('a')?.focus();
     }, [menuOpen]);
 
     const toggleMenu = () => setMenuOpen((open) => !open);
-    const closeMenu = () => {
-        setMenuOpen(false);
-        hamburgerRef.current?.focus();
-    };
 
     return (
         <>
@@ -69,9 +70,9 @@ const Header = () => {
                     </nav>
 
                     <div className="header-cta">
-                        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                        <ExternalLink href={WHATSAPP_URL} className="btn btn-primary">
                             Book Now
-                        </a>
+                        </ExternalLink>
                     </div>
 
                     <button
@@ -94,7 +95,7 @@ const Header = () => {
                 id="mobile-nav"
                 className={`mobile-nav ${menuOpen ? 'open' : ''}`}
                 aria-label="Mobile"
-                aria-hidden={!menuOpen}
+                {...(!menuOpen && { inert: '' })}
             >
                 <ul>
                     <li><a href="#home" onClick={closeMenu}>Home</a></li>
@@ -102,15 +103,9 @@ const Header = () => {
                     <li><a href="#portfolio" onClick={closeMenu}>Portfolio</a></li>
                     <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
                 </ul>
-                <a
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary"
-                    onClick={closeMenu}
-                >
+                <ExternalLink href={WHATSAPP_URL} className="btn btn-primary" onClick={closeMenu}>
                     Book via WhatsApp
-                </a>
+                </ExternalLink>
             </nav>
             {menuOpen && <div className="mobile-overlay visible" onClick={closeMenu} aria-hidden="true"></div>}
         </>

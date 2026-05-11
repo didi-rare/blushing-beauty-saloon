@@ -1,9 +1,9 @@
 import { WHATSAPP_URL } from '../config/contact';
+import ExternalLink from './ExternalLink';
 
 const Hero = () => {
     return (
         <section id="home" className="hero-section">
-            {/* Decorative background — hidden from assistive tech */}
             <div className="hero-bg-overlay" aria-hidden="true"></div>
             <div className="hero-orb hero-orb-1" aria-hidden="true"></div>
             <div className="hero-orb hero-orb-2" aria-hidden="true"></div>
@@ -20,15 +20,13 @@ const Hero = () => {
                     make you shine. Experience unmatched client care.
                 </p>
                 <div className="hero-buttons">
-                    <a
+                    <ExternalLink
                         href={WHATSAPP_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="btn btn-primary"
-                        aria-label="Book via WhatsApp (opens in a new tab)"
+                        ariaLabel="Book via WhatsApp (opens in a new tab)"
                     >
                         Book via WhatsApp
-                    </a>
+                    </ExternalLink>
                     <a href="#portfolio" className="btn btn-outline">
                         View Our Work
                     </a>
