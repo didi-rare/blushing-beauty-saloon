@@ -100,6 +100,16 @@ describe('Footer Component', () => {
     it('displays the current year in copyright', () => {
         render(<Footer />);
         const year = new Date().getFullYear().toString();
-        expect(screen.getByText(new RegExp(year))).toBeInTheDocument();
+        expect(
+            screen.getByText(new RegExp(`© ${year} Blushing Beauty Studio`, 'i')),
+        ).toBeInTheDocument();
+    });
+
+    // --- Freshness signal ---
+    it('displays a last-updated date for AI/SEO freshness', () => {
+        render(<Footer />);
+        const timeEl = screen.getByText(/Last updated/i).querySelector('time');
+        expect(timeEl).toBeInTheDocument();
+        expect(timeEl.getAttribute('datetime')).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     });
 });

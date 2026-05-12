@@ -64,6 +64,7 @@ const Header = () => {
                         <ul>
                             <li><a href="#home">Home</a></li>
                             <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
                             <li><a href="#portfolio">Portfolio</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
@@ -100,7 +101,9 @@ const Header = () => {
                 <ul>
                     <li><a href="#home" onClick={closeMenu}>Home</a></li>
                     <li><a href="#about" onClick={closeMenu}>About</a></li>
+                    <li><a href="#services" onClick={closeMenu}>Services</a></li>
                     <li><a href="#portfolio" onClick={closeMenu}>Portfolio</a></li>
+                    <li><a href="#faq" onClick={closeMenu}>FAQ</a></li>
                     <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
                 </ul>
                 <ExternalLink href={WHATSAPP_URL} className="btn btn-primary" onClick={closeMenu}>

@@ -2,7 +2,9 @@ import { useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
+import Services from './components/Services';
 import PortfolioGallery from './components/PortfolioGallery';
+import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import ExternalLink from './components/ExternalLink';
 import { WHATSAPP_URL } from './config/contact';
@@ -38,7 +40,9 @@ function App() {
             <main id="main-content">
                 <Hero />
                 <AboutUs />
+                <Services />
                 <PortfolioGallery />
+                <FAQ />
 
                 <section className="cta-section" aria-labelledby="cta-heading">
                     <div className="container cta-content">

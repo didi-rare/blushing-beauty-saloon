@@ -10,6 +10,7 @@ import {
     MAPS_DIRECTIONS_URL,
     MAPS_EMBED_URL,
     HOURS,
+    SITE_LAST_UPDATED,
 } from '../config/contact';
 import ExternalLink from './ExternalLink';
 
@@ -56,7 +57,9 @@ const Footer = () => {
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Our Work</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -99,6 +102,10 @@ const Footer = () => {
             </div>
 
             <div className="footer-bottom">
+                <p>
+                    Blushing Beauty Studio · Lagos, Nigeria · Est. January 2022 ·
+                    Last updated <time dateTime={SITE_LAST_UPDATED}>{SITE_LAST_UPDATED}</time>
+                </p>
                 <p>&copy; {new Date().getFullYear()} Blushing Beauty Studio. All rights reserved.</p>
             </div>
         </footer>
