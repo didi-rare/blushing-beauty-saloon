@@ -11,8 +11,8 @@ const FAQ = () => {
                 </div>
 
                 <div className="faq-list">
-                    {FAQS.map(({ question, answer }) => (
-                        <details key={question} className="faq-item">
+                    {FAQS.map(({ question, answer }, index) => (
+                        <details key={question} className="faq-item" open={index === 0}>
                             <summary>{question}</summary>
                             <div className="faq-answer">{answer}</div>
                         </details>

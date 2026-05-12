@@ -12,7 +12,7 @@ const Services = () => {
 
                 <div className="services-grid">
                     {SERVICES.map(({ icon, name, description }) => (
-                        <article key={name} className="service-card reveal">
+                        <article key={name} className="service-card">
                             <span className="service-icon" aria-hidden="true">{icon}</span>
                             <h3>{name}</h3>
                             <p>{description}</p>
