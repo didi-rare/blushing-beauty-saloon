@@ -56,14 +56,14 @@ describe('Footer Component', () => {
         render(<Footer />);
         const addressLink = screen.getByText(/48 Agboyi Rd/i).closest('a');
         expect(addressLink.getAttribute('href')).toContain('google.com/maps/search');
-        expect(addressLink.getAttribute('href')).toContain('Agboyi');
+        expect(addressLink.getAttribute('href')).toMatch(/6\.5744/);
     });
 
     it('has a separate Get Directions link that uses Maps directions mode', () => {
         render(<Footer />);
         const dirLink = screen.getByText(/Get Directions/i).closest('a');
         expect(dirLink.getAttribute('href')).toContain('google.com/maps/dir');
-        expect(dirLink.getAttribute('href')).toContain('Agboyi');
+        expect(dirLink.getAttribute('href')).toMatch(/6\.5744/);
     });
 
     // --- Working Hours ---
