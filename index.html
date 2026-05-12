@@ -40,7 +40,12 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Great+Vibes&display=swap" />
 
-  <!-- Structured data: LocalBusiness / BeautySalon -->
+  <!--
+    Structured data: BeautySalon (LocalBusiness)
+    When you claim Blushing Beauty Studio on Google Business Profile, add its
+    URL to the "sameAs" array below (e.g. "https://maps.app.goo.gl/...").
+    Same for a Facebook business page.
+  -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -61,6 +66,22 @@
       "postalCode": "100242",
       "addressCountry": "NG"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 6.574422615930472,
+      "longitude": 3.4006385864415036
+    },
+    "areaServed": [
+      { "@type": "Place", "name": "Orioke, Lagos" },
+      { "@type": "Place", "name": "Ogudu, Lagos" },
+      { "@type": "Place", "name": "Ojota, Lagos" },
+      { "@type": "Place", "name": "Ketu, Lagos" },
+      { "@type": "Place", "name": "Gbagada, Lagos" },
+      { "@type": "Place", "name": "Maryland, Lagos" },
+      { "@type": "Place", "name": "Mainland Lagos" }
+    ],
+    "paymentAccepted": "Cash, Bank Transfer, POS",
+    "currenciesAccepted": "NGN",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -75,15 +96,187 @@
         "closes": "19:00"
       }
     ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Beauty Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Hair & Wigs",
+            "description": "Luxurious hair transformations, wig installation and styling, and protective braiding."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Nails & Pedicure",
+            "description": "Flawless manicure, pedicure, gel polish, and nail art."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Makeup & Gele",
+            "description": "Bridal makeup, occasion makeup, and traditional Gele tying for weddings and ceremonies."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Facials & Skincare",
+            "description": "Revitalising facials and complete skincare treatments."
+          }
+        }
+      ]
+    },
     "sameAs": [
       "https://instagram.com/blushingbeautyhub",
       "https://tiktok.com/@blushingbeautyhub"
     ]
   }
   </script>
+
+  <!-- Structured data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What services does Blushing Beauty Studio offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Blushing Beauty Studio offers hair styling and wigs, manicure and pedicure, professional makeup and Gele tying, and revitalising facials. We serve clients across Lagos from our studio at 48 Agboyi Rd, Orioke."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Blushing Beauty Studio located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Blushing Beauty Studio is at 48 Agboyi Rd, Orioke, Lagos 100242, Nigeria. We are easily accessible from Ogudu, Ojota, Ketu, Gbagada, Maryland and the wider Mainland Lagos area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I book an appointment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Send a WhatsApp message to +234 805 745 1244 with the service you want and your preferred date and time. We reply and confirm your booking during business hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are your opening hours?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We are open Monday to Saturday from 8:00 AM to 7:30 PM, and Sunday from 1:00 PM to 7:00 PM."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you tie Gele for weddings and traditional events?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — Gele tying is one of our specialities. We work with brides, wedding parties, and clients attending traditional events to create stunning Gele styles paired with full makeup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you do bridal hair and makeup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we offer full bridal packages including hair styling, makeup, and Gele. Contact us via WhatsApp to discuss your wedding date and book a consultation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I walk in or do I need to book in advance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Booking in advance via WhatsApp is recommended to guarantee your preferred time. Walk-ins are welcome subject to availability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What payment methods do you accept?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We accept cash, bank transfers, and POS card payments in Nigerian Naira (NGN)."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
+  <noscript>
+    <header>
+      <h1>Blushing Beauty Studio</h1>
+      <p>Premium hair, wigs, nails, makeup, Gele, and facials in Lagos since January 2022.</p>
+      <p><strong>Book on WhatsApp:</strong> <a href="https://wa.me/2348057451244">+234 805 745 1244</a></p>
+    </header>
+
+    <section>
+      <h2>About Blushing Beauty Studio</h2>
+      <p>Founded in January 2022, Blushing Beauty Studio is a premium beauty salon at 48 Agboyi Rd, Orioke, Lagos 100242. We specialise in personalised, breathtaking results across hair, nails, makeup, and skincare. Our clients include brides, professionals, and anyone who wants to look and feel their best in Mainland Lagos.</p>
+    </section>
+
+    <section>
+      <h2>Services</h2>
+      <ul>
+        <li><strong>Hair &amp; Wigs</strong> — Luxurious hair transformations, wig installation and styling, and protective braiding.</li>
+        <li><strong>Nails &amp; Pedicure</strong> — Flawless manicure, pedicure, gel polish, and nail art.</li>
+        <li><strong>Makeup &amp; Gele</strong> — Bridal and occasion makeup with professional Gele tying for weddings and traditional events.</li>
+        <li><strong>Facials &amp; Skincare</strong> — Revitalising facials and complete skincare treatments.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Visit us</h2>
+      <p><strong>Address:</strong> 48 Agboyi Rd, Orioke, Lagos 100242, Nigeria</p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/2348057451244">+234 805 745 1244</a></p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/blushingbeautyhub">@blushingbeautyhub</a></p>
+      <p><strong>TikTok:</strong> <a href="https://tiktok.com/@blushingbeautyhub">@blushingbeautyhub</a></p>
+      <h3>Opening hours</h3>
+      <ul>
+        <li>Monday – Saturday: 8:00 AM – 7:30 PM</li>
+        <li>Sunday: 1:00 PM – 7:00 PM</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Frequently asked questions</h2>
+
+      <h3>What services does Blushing Beauty Studio offer?</h3>
+      <p>We offer hair styling and wigs, manicure and pedicure, professional makeup and Gele tying, and revitalising facials.</p>
+
+      <h3>Where is Blushing Beauty Studio located?</h3>
+      <p>48 Agboyi Rd, Orioke, Lagos 100242, Nigeria. Easily accessible from Ogudu, Ojota, Ketu, Gbagada, Maryland and the wider Mainland Lagos area.</p>
+
+      <h3>How do I book an appointment?</h3>
+      <p>Send a WhatsApp message to +234 805 745 1244 with your preferred service, date, and time. We respond and confirm during business hours.</p>
+
+      <h3>Do you tie Gele for weddings?</h3>
+      <p>Yes — Gele tying is one of our specialities. We work with brides, wedding parties, and clients attending traditional events.</p>
+
+      <h3>Do you do bridal hair and makeup?</h3>
+      <p>Yes. We offer full bridal packages including hair styling, makeup, and Gele.</p>
+
+      <h3>Can I walk in or do I need to book?</h3>
+      <p>Booking in advance via WhatsApp is recommended. Walk-ins are welcome subject to availability.</p>
+
+      <h3>What payment methods do you accept?</h3>
+      <p>Cash, bank transfers, and POS card payments in Nigerian Naira (NGN).</p>
+    </section>
+  </noscript>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>

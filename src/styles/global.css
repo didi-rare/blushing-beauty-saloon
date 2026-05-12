@@ -177,7 +177,7 @@ section {
 }
 
 .section-header .section-label {
-    display: inline-block;
+    display: block;
     font-family: var(--font-cursive);
     font-size: 1.5rem;
     color: var(--color-primary);

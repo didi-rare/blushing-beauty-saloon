@@ -52,11 +52,18 @@ describe('Footer Component', () => {
         expect(screen.getByText(/48 Agboyi Rd, Orioke, Lagos 100242/i)).toBeInTheDocument();
     });
 
-    it('address link opens Google Maps with directions', () => {
+    it('address link opens Google Maps showing the location (search, not directions)', () => {
         render(<Footer />);
         const addressLink = screen.getByText(/48 Agboyi Rd/i).closest('a');
-        expect(addressLink.getAttribute('href')).toContain('google.com/maps/dir');
-        expect(addressLink.getAttribute('href')).toContain('Agboyi');
+        expect(addressLink.getAttribute('href')).toContain('google.com/maps/search');
+        expect(addressLink.getAttribute('href')).toMatch(/6\.5744/);
+    });
+
+    it('has a separate Get Directions link that uses Maps directions mode', () => {
+        render(<Footer />);
+        const dirLink = screen.getByText(/Get Directions/i).closest('a');
+        expect(dirLink.getAttribute('href')).toContain('google.com/maps/dir');
+        expect(dirLink.getAttribute('href')).toMatch(/6\.5744/);
     });
 
     // --- Working Hours ---
@@ -93,6 +100,16 @@ describe('Footer Component', () => {
     it('displays the current year in copyright', () => {
         render(<Footer />);
         const year = new Date().getFullYear().toString();
-        expect(screen.getByText(new RegExp(year))).toBeInTheDocument();
+        expect(
+            screen.getByText(new RegExp(`© ${year} Blushing Beauty Studio`, 'i')),
+        ).toBeInTheDocument();
+    });
+
+    // --- Freshness signal ---
+    it('displays a last-updated date for AI/SEO freshness', () => {
+        render(<Footer />);
+        const timeEl = screen.getByText(/Last updated/i).querySelector('time');
+        expect(timeEl).toBeInTheDocument();
+        expect(timeEl.getAttribute('datetime')).toMatch(/^\d{4}-\d{2}-\d{2}$/);
     });
 });
