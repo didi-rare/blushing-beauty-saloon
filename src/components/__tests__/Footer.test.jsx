@@ -52,11 +52,18 @@ describe('Footer Component', () => {
         expect(screen.getByText(/48 Agboyi Rd, Orioke, Lagos 100242/i)).toBeInTheDocument();
     });
 
-    it('address link opens Google Maps with directions', () => {
+    it('address link opens Google Maps showing the location (search, not directions)', () => {
         render(<Footer />);
         const addressLink = screen.getByText(/48 Agboyi Rd/i).closest('a');
-        expect(addressLink.getAttribute('href')).toContain('google.com/maps/dir');
+        expect(addressLink.getAttribute('href')).toContain('google.com/maps/search');
         expect(addressLink.getAttribute('href')).toContain('Agboyi');
+    });
+
+    it('has a separate Get Directions link that uses Maps directions mode', () => {
+        render(<Footer />);
+        const dirLink = screen.getByText(/Get Directions/i).closest('a');
+        expect(dirLink.getAttribute('href')).toContain('google.com/maps/dir');
+        expect(dirLink.getAttribute('href')).toContain('Agboyi');
     });
 
     // --- Working Hours ---

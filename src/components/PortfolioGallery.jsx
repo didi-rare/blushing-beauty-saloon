@@ -70,7 +70,7 @@ const PortfolioGallery = () => {
                         <ExternalLink
                             key={item.src}
                             href={WHATSAPP_URL}
-                            className="gallery-item reveal"
+                            className="gallery-item"
                             ariaLabel={`Book this look on WhatsApp: ${item.alt}`}
                         >
                             <img

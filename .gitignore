@@ -27,3 +27,6 @@ dist-ssr
 
 Security Audit Report.md
 *Security Audit*.md
+
+# Claude Code local tooling
+.claude/

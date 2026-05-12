@@ -6,6 +6,7 @@ import {
     TIKTOK_URL,
     TIKTOK_HANDLE,
     ADDRESS_LINE,
+    MAPS_SEARCH_URL,
     MAPS_DIRECTIONS_URL,
     MAPS_EMBED_URL,
     HOURS,
@@ -66,8 +67,14 @@ const Footer = () => {
                     <p><strong>Instagram:</strong> <ExternalLink href={INSTAGRAM_URL}>@{INSTAGRAM_HANDLE}</ExternalLink></p>
                     <p><strong>TikTok:</strong> <ExternalLink href={TIKTOK_URL}>@{TIKTOK_HANDLE}</ExternalLink></p>
                     <p className="footer-address">
-                        <LocationIcon />
-                        <ExternalLink href={MAPS_DIRECTIONS_URL}>{ADDRESS_LINE}</ExternalLink>
+                        <strong>Address:</strong>{' '}
+                        <ExternalLink href={MAPS_SEARCH_URL} ariaLabel={`View ${ADDRESS_LINE} on Google Maps`}>
+                            {ADDRESS_LINE}
+                        </ExternalLink>
+                    </p>
+                    <p className="footer-directions">
+                        <LocationIcon />{' '}
+                        <ExternalLink href={MAPS_DIRECTIONS_URL}>Get Directions →</ExternalLink>
                     </p>
 
                     <div className="footer-hours">
