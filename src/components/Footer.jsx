@@ -12,6 +12,7 @@ import {
     HOURS,
     SITE_LAST_UPDATED,
 } from '../config/contact';
+import { SERVICE_PAGES, servicePath } from '../config/servicePages';
 import ExternalLink from './ExternalLink';
 
 const WhatsAppIcon = () => (
@@ -55,12 +56,14 @@ const Footer = () => {
                 <div className="footer-links">
                     <h4>Navigate</h4>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Our Work</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#about">About Us</a></li>
+                        <li><a href="/#portfolio">Our Work</a></li>
+                        <li><a href="/#faq">FAQ</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                        {SERVICE_PAGES.map(({ slug, name }) => (
+                            <li key={slug}><a href={servicePath(slug)}>{name}</a></li>
+                        ))}
                     </ul>
                 </div>
 
@@ -106,7 +109,9 @@ const Footer = () => {
                     Blushing Beauty Studio · Lagos, Nigeria · Est. January 2022 ·
                     Last updated <time dateTime={SITE_LAST_UPDATED}>{SITE_LAST_UPDATED}</time>
                 </p>
-                <p>&copy; {new Date().getFullYear()} Blushing Beauty Studio. All rights reserved.</p>
+                {/* suppressHydrationWarning: the year is baked in at prerender time
+                    and may lag the client by one year right after New Year. */}
+                <p suppressHydrationWarning>&copy; {new Date().getFullYear()} Blushing Beauty Studio. All rights reserved.</p>
             </div>
         </footer>
     );

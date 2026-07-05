@@ -53,7 +53,7 @@ const Header = () => {
         <>
             <header className={`header ${scrolled ? 'scrolled' : ''}`}>
                 <div className="container header-container">
-                    <a href="#home" className="logo-link">
+                    <a href="/" className="logo-link">
                         <div className="logo-text">
                             <span className="logo-blushing">Blushing Beauty</span>
                             <span className="logo-beauty">Studio</span>
@@ -62,11 +62,11 @@ const Header = () => {
 
                     <nav className="desktop-nav" aria-label="Primary">
                         <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/#about">About</a></li>
+                            <li><a href="/#services">Services</a></li>
+                            <li><a href="/#portfolio">Portfolio</a></li>
+                            <li><a href="/#contact">Contact</a></li>
                         </ul>
                     </nav>
 
@@ -99,12 +99,12 @@ const Header = () => {
                 inert={menuOpen ? undefined : ''}
             >
                 <ul>
-                    <li><a href="#home" onClick={closeMenu}>Home</a></li>
-                    <li><a href="#about" onClick={closeMenu}>About</a></li>
-                    <li><a href="#services" onClick={closeMenu}>Services</a></li>
-                    <li><a href="#portfolio" onClick={closeMenu}>Portfolio</a></li>
-                    <li><a href="#faq" onClick={closeMenu}>FAQ</a></li>
-                    <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+                    <li><a href="/" onClick={closeMenu}>Home</a></li>
+                    <li><a href="/#about" onClick={closeMenu}>About</a></li>
+                    <li><a href="/#services" onClick={closeMenu}>Services</a></li>
+                    <li><a href="/#portfolio" onClick={closeMenu}>Portfolio</a></li>
+                    <li><a href="/#faq" onClick={closeMenu}>FAQ</a></li>
+                    <li><a href="/#contact" onClick={closeMenu}>Contact</a></li>
                 </ul>
                 <ExternalLink href={WHATSAPP_URL} className="btn btn-primary" onClick={closeMenu}>
                     Book via WhatsApp

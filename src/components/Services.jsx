@@ -1,4 +1,7 @@
 import { SERVICES } from '../config/contact';
+import { SERVICE_PAGES, servicePath } from '../config/servicePages';
+
+const pagePathByName = new Map(SERVICE_PAGES.map(({ name, slug }) => [name, servicePath(slug)]));
 
 const Services = () => {
     return (
@@ -16,6 +19,12 @@ const Services = () => {
                             <span className="service-icon" aria-hidden="true">{icon}</span>
                             <h3>{name}</h3>
                             <p>{description}</p>
+                            {pagePathByName.has(name) && (
+                                <a className="service-card-link" href={pagePathByName.get(name)}>
+                                    Learn more<span aria-hidden="true"> →</span>
+                                    <span className="sr-only"> about {name}</span>
+                                </a>
+                            )}
                         </article>
                     ))}
                 </div>

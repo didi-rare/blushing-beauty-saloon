@@ -28,13 +28,13 @@ describe('Header Component', () => {
         expect(bookNowLink.closest('a')).toHaveAttribute('href', 'https://wa.me/2348057451244');
     });
 
-    it('has nav links pointing to correct sections', () => {
+    it('has nav links that work from any page (root-relative)', () => {
         render(<Header />);
         const homeLinks = screen.getAllByText('Home');
-        expect(homeLinks[0].closest('a')).toHaveAttribute('href', '#home');
+        expect(homeLinks[0].closest('a')).toHaveAttribute('href', '/');
 
         const aboutLinks = screen.getAllByText('About');
-        expect(aboutLinks[0].closest('a')).toHaveAttribute('href', '#about');
+        expect(aboutLinks[0].closest('a')).toHaveAttribute('href', '/#about');
     });
 
     it('renders the hamburger menu button', () => {
