@@ -11,8 +11,6 @@
   <title>Blushing Beauty Studio | Premium Hair, Nails &amp; Beauty in Lagos</title>
   <meta name="description"
     content="Blushing Beauty Studio — Where Professionalism Meets Perfection. Premium hair, wigs, nails, makeup, Gele, and facials in Lagos since 2022. Book via WhatsApp today!" />
-  <meta name="keywords"
-    content="beauty salon Lagos, hair styling, nails, makeup, Gele, facials, braids, wigs, Blushing Beauty Studio" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -34,11 +32,19 @@
     content="Where Professionalism Meets Perfection. Premium beauty experiences tailored to your lifestyle." />
   <meta name="twitter:image" content="https://www.blushingbeauty.studio/og-image.jpg" />
 
-  <!-- Fonts (preconnect + non-blocking link) -->
+  <!--
+    Fonts: loaded with media="print" so the stylesheet doesn't block first
+    render; main.jsx flips media to "all" once JS runs. The CSP (script-src
+    'self') forbids the usual inline onload swap, hence the JS-side flip.
+  -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet"
+  <link rel="stylesheet" id="font-css" media="print"
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Great+Vibes&display=swap" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Great+Vibes&display=swap" />
+  </noscript>
 
   <!--
     Structured data: BeautySalon (LocalBusiness)
