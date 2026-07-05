@@ -283,7 +283,28 @@
       <p>Cash, bank transfers, and POS card payments in Nigerian Naira (NGN).</p>
     </section>
   </noscript>
-  <div id="root"></div>
+  <!--
+    Static hero shell: crawlers that don't execute JS (e.g. Bing's SEO
+    analyzer) must find the H1 in the raw HTML. React's createRoot().render()
+    replaces this with the real <Hero> on mount, so keep its text in sync
+    with src/components/Hero.jsx.
+  -->
+  <div id="root">
+    <section class="hero-section">
+      <div class="hero-bg-overlay" aria-hidden="true"></div>
+      <div class="hero-container">
+        <span class="hero-label">Welcome to</span>
+        <h1>Blushing Beauty Studio</h1>
+        <div class="hero-divider" aria-hidden="true"></div>
+        <p class="hero-tagline">
+          Where Professionalism Meets Perfection. Since 2022, we have been delivering premium beauty
+          experiences tailored to your lifestyle. Specializing in expert hair &amp; wigs, stunning makeup
+          &amp; Gele, flawless nails, and revitalizing facials — we are obsessed with the details that
+          make you shine. Experience unmatched client care.
+        </p>
+      </div>
+    </section>
+  </div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
